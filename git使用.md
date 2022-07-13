@@ -150,3 +150,10 @@ target
     excludesfile = C:/Users/ asus git .ignore
     注意：这里要使用“正斜线（/）”，不要使用“反斜线(\)"
 ```
+## 5.其他
+刚开始建立一个git库时无法推送上去，可能原因，原来库中有文件。导致无法合成。
+解决方法:可以是使用一下命令
+```
+   git pull 别名 分支 --allowed-unrelated-histories //强制合成
+   然后再次推送
+```
