@@ -19,6 +19,7 @@ public class Plane extends Thread{
         this.width=width;
         this.x=x;
         this.y=y;
+
     }
     public Plane(){
         
@@ -47,6 +48,25 @@ public class Plane extends Thread{
 
         }
     }
+    public static int LimitX(int x){
 
+        if(x>460){
+            return 430;
+        }else if(x<=0){
+            return 0;
+        }else{
+            return x;
+        }
+    }
+    public static int LimitY(int y){
+
+        if(y>760){
+            return 760;
+        }else if(y<=0){
+            return 0;
+        }else{
+            return y;
+        }
+    }
 
 }

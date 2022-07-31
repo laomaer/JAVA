@@ -31,9 +31,11 @@ public class GameFrame extends JFrame {
             @Override
             public void run() {
                 while(true) {
-                    enemyPlanes.add(new EnemyPlane(r.nextInt(), 0, frame));
+                    EnemyPlane enemyPlane = new EnemyPlane(r.nextInt(460), 0, frame);
+                    enemyPlane.start();
+                    enemyPlanes.add(enemyPlane);
                     try {
-                        Thread.sleep(50);
+                        Thread.sleep(500);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }

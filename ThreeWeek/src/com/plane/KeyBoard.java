@@ -36,7 +36,7 @@ public class KeyBoard extends KeyAdapter {
             case 40:
                 frame.plane.down=true;
                 break;
-            case 82:
+            case 32:
                 addBullet();
                 break;
             }
@@ -60,7 +60,7 @@ public class KeyBoard extends KeyAdapter {
             case 40:
                 frame.plane.down=false;
                 break;
-            case 82:
+
 
         }
     }
