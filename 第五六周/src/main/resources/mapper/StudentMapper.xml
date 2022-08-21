@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--xmlns="http://mybatis.org/schema/mybatis-mapper"-->
+<mapper namespace="com.example.workeachweek.mapper.StudentMapper">
+
+    <select id="findAll" resultType="Student">
+        select * from student
+    </select>
+    <select id="findByName" resultType="Student">
+        select * from student where userName=#{name}
+    </select>
+    <select id="findPswByName" resultType="String">
+        select password from student where passWord = #{passWord}
+    </select>
+    <insert id="save">
+        insert into student(userName,passWord,student_no,institute,grade,class,name) value (#{username},#{password},#{student_no},
+            #{institute},#{grade},#{class},#{name})
+    </insert>
+</mapper>
+

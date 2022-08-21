@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--xmlns="http://mybatis.org/schema/mybatis-mapper"-->
+<mapper namespace="com.example.workeachweek.mapper.LostItemMapper">
+    <select id="findAll" resultType="LostItem">
+        select * from LostInfo
+    </select>
+
+    <select id="findOne" resultType="LostItem">
+        select * from LostInfo where lost_id=#{lost_id}
+    </select>
+
+    <insert id="add" >
+        insert into LostInfo(lost_id,lost_name,lost_position,lost_description,claim_position,lost_date
+                            ,is_returned) value (#{lost_id},#{lost_name,#{lost_position},#{lost_description},#{claim_position},#{lost_date
+        },#{is_returned})
+    </insert>
+
+    <delete id="del">
+        delete from LostInfo where lost_id =#{lost_id}
+    </delete>
+
+    <update id="edit">
+        update LostInfo set lost_id=#{lost_id},lost_name=#{lost_name},
+                            lost_position=#{lost_position},lost_description=#{lost_descrtption},
+                            claim_position=#{claim_position},lost_date=#{lost_date},
+                            is_returned = #{is_returned} where lost_id=#{lost_id}
+    </update>
+
+</mapper>
